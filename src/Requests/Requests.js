@@ -14,8 +14,8 @@ class RequestsPage extends React.Component {
           <div style={{ display: 'inline-flex', alignContent: 'center', justifyContent: 'start'}}>
             <Avatar shape="square" size={64} icon="snippets" />
             <div style={{ marginLeft: 10 }}>
-              <h1 style={{ fontSize: 25, fontWeight: 800, color: "#666", marginBottom: 0 }}>Requests</h1>
-              <h3 style={{ fontSize: wsize === 'big' ? 15 : 13, fontStyle: 'italic', color: "#666", marginBottom: 0 }}>View and Approve Requests made by Users</h3>
+              <h1 style={{ fontSize: wsize === 'big' ? 25 : 23, fontWeight: 800, color: "#666", marginBottom: 0 }}>Requests</h1>
+              <h3 style={{ fontSize: wsize === 'big' ? 15 : 11, fontStyle: 'italic', color: "#666", marginBottom: 0 }}>View and Approve Requests made by Users</h3>
             </div>
           </div>
           <Divider />
