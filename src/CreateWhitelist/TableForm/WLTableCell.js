@@ -1,5 +1,5 @@
 import React from 'react';
-import { Input, Form } from 'antd';
+import { Input, Form, Icon } from 'antd';
 
 const FormItem = Form.Item;
 
@@ -96,6 +96,7 @@ export class EditableCell extends React.Component {
                     style={{ paddingRight: 24 }}
                     onClick={this.toggleEdit}
                   >
+                    <Icon type="form" style={{ marginRight: 10 }} />
                     {restProps.children}
                   </div>
                 )

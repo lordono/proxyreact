@@ -1,6 +1,15 @@
 import React from 'react';
 import { Table, Button, Popconfirm, Icon } from 'antd';
 import { EditableFormRow, EditableCell } from './WLTableCell';
+import styled from 'styled-components';
+
+const StyledTable = styled(Table)`
+  thead[class*="ant-table-thead"] th{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #fafafa;
+  }
+`
 
 class EditableTable extends React.Component {
   constructor(props) {
@@ -61,9 +70,9 @@ class EditableTable extends React.Component {
     });
     return (
       <div>
-        <Table
+        <StyledTable
           components={components}
-          rowClassName={() => 'editable-row'}
+          className="new-table"
           dataSource={domains}
           columns={columns}
           pagination={{ pageSize: pageSize, showTotal: (total, range) => `${range[0]}-${range[1]} of ${total} domains` }}

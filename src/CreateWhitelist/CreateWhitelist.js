@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Input, Icon, Avatar, Divider, Button } from 'antd';
+import { Form, Input, Icon, Avatar, Divider, Button, Row, Col } from 'antd';
 import EditableTable from './TableForm/WLTableForm';
 
 const FormItem = Form.Item;
@@ -8,6 +8,7 @@ class CreateWhitelist extends React.Component {
   state = {
     form: {
       host: '',
+      ipaddress: '',
       domains: [{
         key: '0',
         name: 'Old Domain 1',
@@ -74,19 +75,38 @@ class CreateWhitelist extends React.Component {
             </div>
           </div>
           <Divider />
-          <FormItem>
-            <Input 
-              prefix={<Icon type="laptop" style={{ color: 'rgba(0,0,0,.25)' }} />}
-              placeholder="Hostname" 
-              value={form.host} 
-              onChange={e => this.setState({
-                form: {
-                  ...form,
-                  host: e.target.value
-                }
-              })} 
-            />
-          </FormItem>
+          <Row gutter={16}>
+            <Col sm={24} md={12}>
+              <FormItem>
+                <Input 
+                  prefix={<Icon type="laptop" style={{ color: 'rgba(0,0,0,.25)' }} />}
+                  placeholder="Hostname" 
+                  value={form.host} 
+                  onChange={e => this.setState({
+                    form: {
+                      ...form,
+                      host: e.target.value
+                    }
+                  })} 
+                />
+              </FormItem>
+            </Col>
+            <Col sm={24} md={12}>
+              <FormItem>
+                <Input 
+                  prefix={<Icon type="cloud" style={{ color: 'rgba(0,0,0,.25)' }} />}
+                  placeholder="IP Address" 
+                  value={form.ipaddress} 
+                  onChange={e => this.setState({
+                    form: {
+                      ...form,
+                      ipaddress: e.target.value
+                    }
+                  })} 
+                />
+              </FormItem>
+            </Col>
+          </Row>
           <EditableTable 
             pageSize={Math.floor(height/150)}
             domains={form.domains}
